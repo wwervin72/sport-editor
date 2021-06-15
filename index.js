@@ -1,7 +1,8 @@
 const { run } = require("./src/main.js")
+const log = require("./log.js");
 
 const DEFAULT_STEP_SIZE = "15000-20000";
-
+log.warn(process.env)
 // 获取环境变量
 const config = {
   username: process.env.XIAOMI_AMAZFIT_USERNAME,
