@@ -44,8 +44,6 @@ jobs:
 
       # 运行
       - name: Run APP
-        with: 
-          environment: sport-editor
         env:
           XIAOMI_AMAZFIT_USERNAME: ${{secrets.XIAOMI_AMAZFIT_USERNAME}}
           XIAOMI_AMAZFIT_PASSWORD: ${{secrets.XIAOMI_AMAZFIT_PASSWORD}}

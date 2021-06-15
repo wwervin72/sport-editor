@@ -13,6 +13,7 @@ exports.run = async (config) => {
   }
 
   const step = getRamdomStep(config.step_size);
+  log.warn("账号密码：", config.user_id, config.app_token)
   await pushBandData(step, config.user_id, config.app_token);
 }
 
