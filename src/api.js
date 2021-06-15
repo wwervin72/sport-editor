@@ -34,6 +34,7 @@ exports.loginByPassword = async function(username, password) {
       `https://api-user.huami.com/registrations/+86${username}/tokens`,
       data
     );
+    log.info(JSON.stringify(res))
     log.info("登录成功, 开始获取登录授权码");
 
     // 获取Code
