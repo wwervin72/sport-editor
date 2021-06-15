@@ -35,12 +35,12 @@ jobs:
         run: npm install
 
       # 生成随机步数
-      # - name: generate random num of step
-      #   uses: actions/random-selector@v1
-      #   id: RandomSelector
-      #   with:
-      #       data: "15000..20000"
-      #       returnCount: "1"
+      - name: generate random num of step
+        uses: actions/random-selector@v1
+        id: RandomSelector
+        with:
+            data: "15000..20000"
+            returnCount: "1"
 
       # 运行
       - name: Run APP
