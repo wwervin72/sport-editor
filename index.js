@@ -1,6 +1,6 @@
 const { run } = require("./src/main.js")
 
-const DEFAULT_STEP_SIZE = "5000-15000";
+const DEFAULT_STEP_SIZE = "15000-20000";
 
 // 获取环境变量
 const config = {

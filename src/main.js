@@ -12,8 +12,7 @@ exports.run = async (config) => {
     config.user_id = user_id;
   }
 
-  const step = 8000
-  // getRamdomStep(config.step_size);
+  const step = getRamdomStep(config.step_size);
   await pushBandData(step, config.user_id, config.app_token);
 }
 
