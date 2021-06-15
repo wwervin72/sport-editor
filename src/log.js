@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+const dayjs = require("dayjs");
 
 const LogType = {
   INFO: "info",
@@ -10,6 +10,6 @@ function log(msg, type = LogType.INFO) {
   console.log(`[${dayjs().format("YYYY-MM-DD HH:mm:ss.SSS")}] [${type}] ${msg}`);
 }
 
-export const info = (msg) => log(msg, LogType.INFO);
-export const warn = (msg) => log(msg, LogType.WARN);
-export const error = (msg) => log(msg, LogType.ERROR);
+exports.info = (msg) => log(msg, LogType.INFO);
+exports.warn = (msg) => log(msg, LogType.WARN);
+exports.error = (msg) => log(msg, LogType.ERROR);

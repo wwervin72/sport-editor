@@ -5,12 +5,12 @@
   "author": "devifish",
   "private": true,
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "dayjs": "^1.10.4"
+    "dayjs": "^1.10.4",
+    "fs-extra": "^10.0.0"
   }
 }

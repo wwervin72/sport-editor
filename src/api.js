@@ -1,8 +1,8 @@
-import Axios from "axios";
-import dayjs from "dayjs";
-import fs from "fs/promises";
-import { toUrlEncode } from "./common.js";
-import * as log from "./log.js";
+const Axios = require("axios");
+const dayjs = require("dayjs");
+const fs = require("fs-extra");
+const { toUrlEncode } = require("./common.js");
+const log = require("./log.js");
 
 // 公共头
 const COMMON_HEADERS = {
@@ -18,7 +18,7 @@ const axios = Axios.create({
   },
 });
 
-export async function loginByPassword(username, password) {
+exports.loginByPassword = async function(username, password) {
   const redirect_uri = new URL(
     "https://s3-us-west-2.amazonaws.com/hm-registration/successsignin.html"
   );
@@ -80,7 +80,7 @@ export async function loginByPassword(username, password) {
  * @param {code} code
  * @returns
  */
-export async function getAccessToken(code) {
+exports.getAccessToken = async function (code) {
   const data = toUrlEncode({
     app_name: "com.xiaomi.hm.health",
     app_version: "4.6.0",
@@ -104,7 +104,7 @@ export async function getAccessToken(code) {
   }
 }
 
-export async function pushBandData(step, user_id, app_token) {
+exports.pushBandData = async function (step, user_id, app_token) {
   const data = toUrlEncode({
     userid: user_id,
     last_sync_data_time: 1597306380,

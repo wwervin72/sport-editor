@@ -1,8 +1,8 @@
-import { loginByPassword, getAccessToken, pushBandData } from "./api.js";
-import { isEmpty } from "./common.js";
-import * as log from "./log.js";
+const { loginByPassword, getAccessToken, pushBandData } = require("./api.js");
+const { isEmpty } = require("./common.js");
+const log = require("./log.js");
 
-export async function run(config) {
+exports.run = async (config) => {
   if (isEmpty(config.app_token) || isEmpty(config.user_id)) {
     log.warn("未获取到APP_TOKEN或USER_ID 将使用账号密码方式运行");
     const code = await loginByPassword(config.username, config.password);
@@ -12,7 +12,8 @@ export async function run(config) {
     config.user_id = user_id;
   }
 
-  const step = getRamdomStep(config.step_size);
+  const step = 8000
+  // getRamdomStep(config.step_size);
   await pushBandData(step, config.user_id, config.app_token);
 }
 

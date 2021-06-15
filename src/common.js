@@ -1,4 +1,4 @@
-export function toUrlEncode(obj) {
+exports.toUrlEncode = (obj) => {
   const data = new URLSearchParams();
 
   const keys = Object.keys(obj);
@@ -6,7 +6,7 @@ export function toUrlEncode(obj) {
   return data;
 }
 
-export function isEmpty(obj) {
+exports.isEmpty = (obj) => {
   if (typeof obj === "string") {
     return obj.length === 0;
   } else if (obj instanceof Array) {
