@@ -1,5 +1,5 @@
 const { run } = require("./src/main.js")
-const log = require("./log.js");
+const log = require("./src/log.js");
 
 const DEFAULT_STEP_SIZE = "15000-20000";
 log.warn(process.env)
