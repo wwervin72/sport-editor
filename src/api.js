@@ -46,6 +46,7 @@ exports.loginByPassword = async function(username, password) {
     }
     throw new Error("获取登录授权码失败");
   } catch (e) {
+    log.error(e)
     log.error("登录失败， 请检查账号密码");
     throw e;
   }
