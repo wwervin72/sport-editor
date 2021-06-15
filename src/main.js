@@ -5,6 +5,7 @@ const log = require("./log.js");
 exports.run = async (config) => {
   if (isEmpty(config.app_token) || isEmpty(config.user_id)) {
     log.warn("未获取到APP_TOKEN或USER_ID 将使用账号密码方式运行");
+    log.warn("账号密码：", config.username, config.password)
     const code = await loginByPassword(config.username, config.password);
     const { app_token, user_id } = await getAccessToken(code);
 
@@ -13,7 +14,6 @@ exports.run = async (config) => {
   }
 
   const step = getRamdomStep(config.step_size);
-  log.warn("账号密码：", config.user_id, config.app_token)
   await pushBandData(step, config.user_id, config.app_token);
 }
 
